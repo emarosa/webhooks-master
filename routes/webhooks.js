@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 
-const jenkinsUrl = "http://35.193.23.79:8080";
+const jenkinsUrl = "http://localhost:8080";
 const JenkinsCrumb = "141ea03a9339f11fe23e9bb6615ec59f";
 
 router.get('/github-pedidos', function (req, res, next) {
