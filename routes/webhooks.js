@@ -2,21 +2,21 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 
-const jenkinsUrl = "http://localhost:8080";
-const JenkinsCrumb = "141ea03a9339f11fe23e9bb6615ec59f";
+const jenkinsUrl = "http://35.193.23.79:8080";
 
 router.get('/github-pedidos', function (req, res, next) {
+
+  var jobName = "start_pedido-service";
 
   var formData = {
     LABELNAME: 'emarosa-services'
   }
 
   request.post(
-    { 
-      url: jenkinsUrl + "/job/start_pedido-service/buildWithParameters?token=nXjba8mqvxSPSYp5rvYNzn0IXHvJPpUO", 
+    {
+      url: jenkinsUrl + "/job/" + jobName +"/buildWithParameters?token=nXjba8mqvxSPSYp5rvYNzn0IXHvJPpUO",
       formData: formData,
       headers: {
-        'Jenkins-Crumb': JenkinsCrumb,
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       auth: {
@@ -25,11 +25,11 @@ router.get('/github-pedidos', function (req, res, next) {
         'sendImmediately': true
       }
     }, function optionalCallback(err, httpResponse, body) {
-    if (err) {
-      next(err);
-    }
-    console.log('Jenkins called - building job start_pedido-service');
-  });
+      if (err) {
+        next(err);
+      }
+      console.log('Jenkins called - building job ' + jobName);
+    });
 
   res.status(200);
 });
