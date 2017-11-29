@@ -4,7 +4,7 @@ const request = require('request');
 
 const jenkinsUrl = "http://35.193.23.79:8080";
 
-router.get('/github-start-pedidos-service', function (req, res, next) {
+router.post('/github-start-pedidos-service', function (req, res, next) {
 
   var jobName = "start_pedido-service";
   var token = "nXjba8mqvxSPSYp5rvYNzn0IXHvJPpUO";
@@ -35,7 +35,7 @@ router.get('/github-start-pedidos-service', function (req, res, next) {
   res.status(200);
 });
 
-router.get('/github-pedidos-service', function (req, res, next) {
+router.post('/github-pedidos-service', function (req, res, next) {
 
   var jobName = "pedido_service";
   var token = "kdLtC2IqMwJBlctf8APoDRMCjbSVtBlk";
