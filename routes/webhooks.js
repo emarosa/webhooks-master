@@ -64,6 +64,7 @@ router.post('/github-pedidos-service', function (req, res, next) {
     });
 
   res.status(200);
+  res.send({});
 });
 
 module.exports = router;
