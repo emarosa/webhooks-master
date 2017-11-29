@@ -11,5 +11,5 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/webhooks', webhooks);
 
 app.listen(port, function () {
-    console.log('Running webhook master on port ' + port + '!');
+    console.log('Running webhooks master on port ' + port + '!');
 });
