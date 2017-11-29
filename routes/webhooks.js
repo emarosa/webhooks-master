@@ -33,6 +33,7 @@ router.post('/github-start-pedidos-service', function (req, res, next) {
     });
 
   res.status(200);
+  res.send({});
 });
 
 router.post('/github-pedidos-service', function (req, res, next) {
